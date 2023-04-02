@@ -24,3 +24,29 @@ function reverseString(str) {
   
   console.log(hasAlphanumeric(testStr1)); 
   console.log(hasAlphanumeric(testStr2)); 
+// rearrange array//
+function rearrangeArray(arr) {
+  let evenNumbers = [];
+  let oddNumbers = [];
+  
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      evenNumbers.push(arr[i]);
+    } else {
+      oddNumbers.push(arr[i]);
+    }
+  }
+ 
+  evenNumbers.sort((a, b) => b - a);
+  
+ 
+  let result = evenNumbers.concat(oddNumbers);
+  
+  return result;
+}
+
+
+let input = [2, 3, 4, 6, 5, 1, 8];
+let output = rearrangeArray(input);
+console.log(output);
